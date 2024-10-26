@@ -44,7 +44,7 @@ This tool is could be applicable to individuals and groups, including families, 
 - Graph is built
 - Tasks and states can be added at any time
 - Task attributes can be updated at anytime within the graph.
-- Agent can call optimization algorithms/functions (star search etc)
+- Agent can call optimization algorithms/functions (A* search etc)
 - Agent can setup and perform Monte Carlo simulations based on best guess distributions
 - Agent can report on results from optimization algorithms
 
