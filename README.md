@@ -44,7 +44,7 @@ This tool is could be applicable to individuals and groups, including families, 
 - Graph is built
 - Tasks and states can be added at any time
 - Task attributes can be updated at anytime within the graph.
-- Agent can call optimization algorithms/functions (A* search etc)
+- Agent can call optimization algorithms/functions (A* search? ow greedy or depthfirst etc)
 - Agent can setup and perform Monte Carlo simulations based on best guess distributions
 - Agent can report on results from optimization algorithms
 
@@ -118,7 +118,6 @@ python main.py
 
 ## Example
 
-### Sample Interaction
 
 ```bash
 Welcome to the AI-Powered Goal Achievement Planner!
@@ -126,7 +125,11 @@ Welcome to the AI-Powered Goal Achievement Planner!
 Please describe the goal you'd like to accomplish:
 > I want to save $10,000 for a down payment on a house within two years.
 
-Based on your goal, here's a proposed plan:
+# Here we define the user goal, then double check with the user that it is correct. 
+# this is where we can brainstorm root cause if desired.
+
+Based on your goal, here's a proposed plan: 
+# generates steps along the way to goal
 
 States:
 - S0: Current financial state
@@ -157,20 +160,16 @@ Tasks:
   - Cost: $0
   - Success Probability: 95%
 
-Would you like to:
-1. Accept this plan
-2. Modify the plan
-3. Run optimization based on a specific criterion
+# Here we'll have to check if the user would like to edit the map entities 
 
-> 3
+# The map entities (tasks and states) will be built into a graph behind the scene
+# ie graph = Graph(self, tasks, states)
 
-Please select an optimization criterion:
-1. Maximize Success Probability
-2. Minimize Time
-3. Minimize Cost
-4. Weighted Combination
+# solicit the constraints from the user (done by this time, done within this budget, highest certainty, weighted combo etc)
 
-> 1
+# run algorithms to find suitable paths, 
+
+# share the path options and conclusions according to a predefined template. this is the users "map"
 
 Optimal Path Based on Maximizing Success Probability:
 - T1: Create a budget plan
@@ -180,10 +179,9 @@ Total Estimated Time: 24 months
 Total Estimated Cost: $0
 Overall Success Probability: 85.5%
 
-Would you like to proceed with this plan? (yes/no)
-> yes
+# from here the first major milestone of this project is complete. Next, we want the agent to "assist" over time with reminders, any internet searches, writing any documents required along the way, providing contacts from internet searches (ie suggest a phonecall to someone with knowledge of one of the steps to connect the plan to reality). or suggest user shares the plan with someone who has traversed the map before to get a reality check. 
 
-Generating report...
+# we also want to update the map and our position along the way. there should be high resolution (lots of tasks) close to now, and more general tasks futher out for big goals. (multiyear plans could include making a phonecall now and enrolling in a class, while further out from now there might be a step, "get a higher paying job")
 ```
 
 ## Project Structure
